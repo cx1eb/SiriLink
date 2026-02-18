@@ -6,6 +6,11 @@ SiriLink is a web-based tool for creating and managing custom remote control eve
 
 SiriLink was inspired by the need for a quick, centralized way to manage computer actions on a local network without direct physical access. Many remote control tools are complex, requiring app installations or complicated setups. SiriLink aims to simplify this process by offering a lightweight, easily customizable interface, perfect for local control of connected devices.
 
+## UI / Theming Notes
+
+Right now the UI is built using **Bootstrap** plus an **AI-generated theme** that I’m iterating on while the backend and core features are being implemented.  
+**Proper theming + consistent design polish is planned later** (final styling, spacing, components, dark/light refinement, etc.). The current styling is functional and subject to change.
+
 ## Features
 
 - **Create Events**: Add custom events to perform actions like sleep, shutdown, restart, or lock.
@@ -33,10 +38,11 @@ To start using SiriLink:
 - [x] Create a copy-to-clipboard functionality for URLs.
 - [x] Add green-text notification for copied URLs.
 - [ ] Add real-time backend integration for device control (e.g., using python).
-- [ ] Expand event types (e.g., custom commands).
-- [ ] Implement user authentication for extra security. (if needed, will be used on lan so unlikely)
-- [ ] Add mobile-friendly responsive design.
-- [ ] Set up event history or logging.
+- [x] Expand event types (e.g., custom commands).
+- [x] Implement user authentication for extra security. (if needed, will be used on lan so unlikely)
+- [x] Add mobile-friendly responsive design.
+- [x] Set up event history or logging.
+- [ ] Finalize theming/design system (replace current bootstrap + AI-generated theme with a consistent polished theme).
 
 ## Contributions
 
