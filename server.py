@@ -118,6 +118,36 @@ def execute():
 
     return jsonify({"status": "Executed"}), 200
 
+from flask import abort
+
+@app.route("/api/run/<command_name>", methods=["GET"])
+def api_run_get(command_name):
+    ip = request.remote_addr
+    key = request.args.get("key", "")
+
+    config = load_json(CONFIG_FILE)
+    commands = load_json(COMMAND_FILE)
+
+    if command_name not in commands:
+        log_event(ip, command_name, key, False)
+        abort(404)
+
+    if key != config.get("api_password"):
+        log_event(ip, command_name, key, False)
+        abort(403)
+
+    if not commands[command_name].get("enabled", False):
+        log_event(ip, command_name, key, False)
+        abort(403)
+
+    threading.Thread(
+        target=execute_command,
+        args=(commands[command_name]["command"],)
+    ).start()
+
+    log_event(ip, command_name, key, True)
+    return "OK"
+
 
 @app.route("/save_command", methods=["POST"])
 def save_command():
