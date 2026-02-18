@@ -1,0 +1,22 @@
+{
+    "sleep": {
+        "enabled": true,
+        "command": "rundll32.exe powrprof.dll,SetSuspendState 0,1,0",
+        "description": "Put PC to sleep"
+    },
+    "shutdown": {
+        "enabled": true,
+        "command": "shutdown /s /f /t 0",
+        "description": "Shutdown PC"
+    },
+    "restart": {
+        "enabled": true,
+        "command": "shutdown /r /f /t 0",
+        "description": "Restart PC"
+    },
+    "lock": {
+        "enabled": true,
+        "command": "rundll32.exe user32.dll,LockWorkStation",
+        "description": "Lock PC"
+    }
+}
